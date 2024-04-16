@@ -1,13 +1,14 @@
-package com.example;
+package codewars.com;
 
-import com.example.kata.training.Accumul;
-import com.example.kata.training.SplitStrings;
-import com.example.kata.training.SumOfNumbers;
-import com.example.kata.training.ArmstrongNumber;
-import com.example.kata.training.BinaryArrayToNumber;
-import com.example.kata.training.ConvertStringToCamelCase;
-import com.example.kata.training.HumanReadableTime;
-import com.example.kata.training.PhoneNumber;
+import codewars.com.kata.training.Accumul;
+import codewars.com.kata.training.BraceChecker;
+import codewars.com.kata.training.SplitStrings;
+import codewars.com.kata.training.SumOfNumbers;
+import codewars.com.kata.training.ArmstrongNumber;
+import codewars.com.kata.training.BinaryArrayToNumber;
+import codewars.com.kata.training.ConvertStringToCamelCase;
+import codewars.com.kata.training.HumanReadableTime;
+import codewars.com.kata.training.PhoneNumber;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,8 +20,7 @@ public class Main {
         String convertStringToCamelCase = ConvertStringToCamelCase.solution(string, regex);
         System.out.println("convertStringToCamelCase = " + convertStringToCamelCase);
 
-        String helloWorld = convertStringToCamelCase;
-        String[] splitStrings = SplitStrings.solution(helloWorld);
+        String[] splitStrings = SplitStrings.solution(convertStringToCamelCase);
         System.out.println("splitStrings = " + Arrays.toString(splitStrings));
 
         int number = 153;
@@ -32,7 +32,7 @@ public class Main {
         int sumOfNumbers = SumOfNumbers.getSum(a, b);
         System.out.println("sumOfNumbers = " + sumOfNumbers);
 
-        String accum = Accumul.accum(helloWorld);
+        String accum = Accumul.accum(convertStringToCamelCase);
         System.out.println("accum = " + accum);
 
         List<Integer> binary = List.of(1,1,1,1);
@@ -40,13 +40,15 @@ public class Main {
         System.out.println("convertBinaryArrayToInt = " + convertBinaryArrayToInt);
 
 
+        System.out.println("PhoneNumber");
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
         String phoneNumber = PhoneNumber.createPhoneNumber(numbers);
         System.out.println("phoneNumber = " + phoneNumber);
 
 
+        System.out.println("HumanReadableTime");
+        String messageIs = "time = ";
         String message = HumanReadableTime.makeReadable(0);
-        String messageIs = "HumanReadableTime = ";
         System.out.println(messageIs + message);
         message = HumanReadableTime.makeReadable(60);
         System.out.println(messageIs + message);
@@ -54,5 +56,12 @@ public class Main {
         System.out.println(messageIs + message);
         message = HumanReadableTime.makeReadable(359999);
         System.out.println(messageIs + message);
+
+        System.out.println("BraceChecker");
+        String braces = "())({}}{()][][";
+        System.out.println("string = " + braces);
+        BraceChecker braceChecker = new BraceChecker();
+        System.out.println("result = " + braceChecker.isValid(braces));
+
     }
 }
