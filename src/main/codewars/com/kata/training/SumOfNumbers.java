@@ -1,4 +1,4 @@
-package com.example.kata.training;
+package codewars.com.kata.training;
 
 /**
  * Given two integers a and b, which can be positive or negative,

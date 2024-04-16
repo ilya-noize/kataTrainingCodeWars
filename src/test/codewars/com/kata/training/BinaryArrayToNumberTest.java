@@ -1,4 +1,4 @@
-package codewars.com.example.kata.training;
+package codewars.com.kata.training;
 
 import org.junit.jupiter.api.Test;
 

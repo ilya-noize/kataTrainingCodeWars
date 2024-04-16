@@ -1,8 +1,8 @@
-package com.example.kata.training;
+package codewars.com.kata.training;
 
 public class PhoneNumber {
 
-    public String createPhoneNumberByMask(int[] numbers) {
+    public String popularSolution(int[] numbers) {
         String phoneNumber = "(xxx) xxx-xxxx";
 
         for (int i : numbers) {

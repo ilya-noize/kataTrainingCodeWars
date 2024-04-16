@@ -1,4 +1,4 @@
-package com.example.kata.training;
+package codewars.com.kata.training;
 
 /**
  * You live in the city of Cartesia where all roads are laid out in a perfect grid.
@@ -20,8 +20,30 @@ package com.example.kata.training;
  * It will never give you an empty array (that's not a walk, that's standing still!).
  */
 public class TenMinutesWalk {
+    public static final int WALK_TIME = 10;
+    public static final char NORTH = 'n';
+    public static final char EAST = 'e';
+    public static final char SOUTH = 's';
+    public static final char WEST = 'w';
+
+    private TenMinutesWalk() {
+    }
+
     public static boolean isValid(char[] walk) {
-        // Insert brilliant code here
-        return true;
+        if (walk.length != WALK_TIME) return false;
+        int latitude = 0;// y
+        int longitude = 0;// x
+        for (int i = 0; i < WALK_TIME; i++) {
+            if (walk[i] == NORTH) {
+                latitude++;
+            } else if (walk[i] == EAST) {
+                longitude--;
+            } else if (walk[i] == SOUTH) {
+                latitude--;
+            } else if (walk[i] == WEST) {
+                longitude++;
+            }
+        }
+        return latitude == 0 && longitude == 0;
     }
 }

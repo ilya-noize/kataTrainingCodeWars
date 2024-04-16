@@ -1,4 +1,6 @@
-package com.example.kata.training;
+package codewars.com.kata.training;
+
+import codewars.com.kata.training.exceptions.MyOwnRuntimeException;
 
 /**
  * Write a function, which takes a non-negative integer (seconds) as input
@@ -16,7 +18,7 @@ public class HumanReadableTime {
 
     public static String makeReadable(int seconds) {
         if (seconds > 359999) {
-            throw new RuntimeException("Field overflow error");
+            throw new MyOwnRuntimeException("Field overflow error");
         }
         int hours = seconds / 3600;
         seconds -= 3600 * hours;
@@ -29,7 +31,7 @@ public class HumanReadableTime {
                 seconds < 10 ? "0" + seconds : seconds + "");
     }
 
-    private static String getString(int seconds) {
+    public static String popularSolution(int seconds) {
         return String.format("%02d:%02d:%02d", seconds / 3600, (seconds / 60) % 60, seconds % 60);
     }
 

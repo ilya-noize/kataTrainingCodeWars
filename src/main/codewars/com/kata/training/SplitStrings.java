@@ -1,4 +1,4 @@
-package com.example.kata.training;
+package codewars.com.kata.training;
 
 public class SplitStrings {
     private SplitStrings() {

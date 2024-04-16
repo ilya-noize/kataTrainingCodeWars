@@ -1,4 +1,4 @@
-package com.example.kata.training;
+package codewars.com.kata.training;
 
 /**
  * A Narcissistic Number (or Armstrong Number) is a positive number which is the sum of its own digits,
