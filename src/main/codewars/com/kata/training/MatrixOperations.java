@@ -1,7 +1,5 @@
 package codewars.com.kata.training;
 
-import codewars.com.kata.training.exceptions.MyOwnRuntimeException;
-
 public class MatrixOperations {
 
     private MatrixOperations() {
@@ -19,8 +17,6 @@ public class MatrixOperations {
      *   [2, 2, 4] ]
      */
     public static int[][] matrixAddition(int[][] a, int[][] b) {
-        if (a == null || b == null)
-            throw new MyOwnRuntimeException("Matrix is null");
         int minRows = Math.min(a.length, b.length);
         int minColumns = Math.min(a[0].length, b[0].length);
         int[][] c = new int[minRows][minColumns];
