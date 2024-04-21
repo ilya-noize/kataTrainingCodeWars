@@ -6,8 +6,8 @@ public class RomanNumeralsEncoder {
     private final Map<Integer, Map<Integer, String>> roman = Map.of(
             1, Map.of(
                     1, "I",
-                    2, "II",
-                    3, "III",
+                    2, "I".repeat(2),
+                    3, "I".repeat(3),
                     4, "IV",
                     5, "V",
                     6, "VI",
@@ -55,8 +55,9 @@ public class RomanNumeralsEncoder {
         String num = Integer.toString(n);
         int length = num.length();
         for (int i = 0; i < length; i++) {
-            String digit = num.substring(i, i+1);
-            out.append(roman.get(length - i).get(Integer.parseInt(digit)));
+            String digit = num.substring(i, i + 1);
+            String str = roman.get(length - i).get(Integer.parseInt(digit));
+            if (str != null) out.append(str);
         }
         return out.toString();
     }
