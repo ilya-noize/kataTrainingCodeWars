@@ -1,4 +1,5 @@
 package codewars.com.kata.training;
+
 /**
  * Your task in order to complete this Kata is to write a function which formats a duration, given as a number of seconds, in a human-friendly way.
  * <p>
@@ -44,9 +45,7 @@ enum Time {
 enum ConverterTimes {
     // Singular
     YEAR("year"),
-
     DAY("day"),
-
     HOUR("hour"),
     MINUTE("minute"),
     SECOND("second"),
@@ -131,9 +130,11 @@ public class TimeFormatter {
     private static StringBuilder print(int[] timeline) {
         StringBuilder stringBuilder = new StringBuilder();
         int[] index = getLastNotZero(timeline);
+        boolean isNow = true;
         for (int i = 0; i < timeline.length; i++) {
             int elementTime = timeline[i];
             if (elementTime != 0) {
+                isNow = false;
                 index[1]--;
                 stringBuilder
                         .append(index[0] == i ? " and " : "")
@@ -147,33 +148,35 @@ public class TimeFormatter {
                         .append(index[1] >= 2 ? ", " : "");
             }
         }
+        if (isNow) {
+            stringBuilder.append("now");
+        }
 
         return stringBuilder;
     }
 
     private static int[] getLastNotZero(int[] timeline) {
-        boolean isFirst = false;
         boolean isLast = false;
         int last = 0;
         int count = 1;
         int length = timeline.length - 1;
         for (int i = length; i >= 0; i--) {
             if (timeline[i] != 0) {
-                if (!isFirst) {
-                    isFirst = true;
+                if (!isLast) {
+                    isLast = true;
+                    last = i;
                 } else {
-                    if(!isLast) {
-                        isLast = true;
-                    }
                     count++;
                 }
             } else {
-                last = length - i;
+                if (!isLast) {
+                    last = length - i;
+                }
             }
         }
 
         return new int[]{
-                count != 1 ? last : -1 ,
+                count != 1 ? last : -1,
                 count
         };
     }
