@@ -7,6 +7,7 @@ import codewars.com.kata.training.BraceChecker;
 import codewars.com.kata.training.ConvertStringToCamelCase;
 import codewars.com.kata.training.HumanReadableTime;
 import codewars.com.kata.training.PhoneNumber;
+import codewars.com.kata.training.PigLatin;
 import codewars.com.kata.training.RomanNumeralsEncoder;
 import codewars.com.kata.training.SplitStrings;
 import codewars.com.kata.training.SumOfNumbers;
@@ -16,17 +17,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
+    private static final String HELLO_WORLD = "hello World";
     public static void main(String[] args) {
-        timeFormatter();
+        pigLatin();
         kataPack();
-    }
-
-    private static void timeFormatter() {
-        System.out.println("Time Formatter - human friendly format");
-        System.out.println(TimeFormatter.formatDuration(1));
-        System.out.println(TimeFormatter.formatDuration(61));
-        System.out.println(TimeFormatter.formatDuration(3601));
-        System.out.println(TimeFormatter.formatDuration(86401));
     }
 
     private static void kataPack() {
@@ -40,6 +34,20 @@ public class Main {
         humanReadableTime();
         braceChecker();
         romanNumeralEncoder();
+        timeFormatter();
+    }
+
+    private static void timeFormatter() {
+        System.out.println("Time Formatter - human friendly format");
+        System.out.println(TimeFormatter.formatDuration(1));
+        System.out.println(TimeFormatter.formatDuration(61));
+        System.out.println(TimeFormatter.formatDuration(3601));
+        System.out.println(TimeFormatter.formatDuration(86401));
+    }
+
+    private static void pigLatin() {
+        String pigIt = PigLatin.pigIt(HELLO_WORLD);
+        System.out.println("pigIt = " + pigIt);
     }
 
     private static void romanNumeralEncoder() {
