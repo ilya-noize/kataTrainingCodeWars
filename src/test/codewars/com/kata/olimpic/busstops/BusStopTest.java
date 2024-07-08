@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 import java.util.Random;
 
 import static codewars.com.kata.olimpic.busstops.BusStop.getNearestStops;
-import static codewars.com.kata.olimpic.busstops.BusStop.showArray;
-import static codewars.com.kata.olimpic.busstops.BusStop.sortAscendingOrder;
+import static codewars.com.kata.olimpic.busstops.utils.ArrayUtils.showArray;
+import static codewars.com.kata.olimpic.busstops.utils.ArrayUtils.sortAscendingOrder;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BusStopTest {

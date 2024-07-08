@@ -1,4 +1,4 @@
-package codewars.com.kata.olimpic.busstops;
+package codewars.com.kata.olimpic.busstops.thread;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -9,8 +9,6 @@ import java.io.OutputStreamWriter;
 import static codewars.com.kata.olimpic.busstops.utils.ArrayUtils.sortAscendingOrder;
 
 /**
-
-
 Если автобус имеет координату x, то выбирается номер остановки i, минимизирующий
 ∣𝑎𝑖–𝑥∣. Если таких 𝑖 несколько, то выбирать номер нужно остановки по правилам:
 
@@ -33,7 +31,7 @@ import static codewars.com.kata.olimpic.busstops.utils.ArrayUtils.sortAscendingO
 - Во время второго запроса автобус находится в точке 1,
 а значит существует всего одна остановка,
 минимизирующая заданное расстояние = 0.
-<br/>
+<hr>
 # Example <br/>
 ## IN   <br/>
 3 2     <br/>
@@ -43,8 +41,9 @@ import static codewars.com.kata.olimpic.busstops.utils.ArrayUtils.sortAscendingO
 ## OUT  <br/>
 2       <br/>
 1       <br/>
+
  */
-public class BusStop {
+public class BusStopAsync {
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -68,82 +67,12 @@ public class BusStop {
 
         sortAscendingOrder(busStops, numberStops);
 
-        int[] nearestStops = getNearestStops(busStops, buses);
-
-        for (int i : nearestStops) {
-            writer.write(i + "\n");
+        for (int bus : buses) {
+            NearestStopsThread thread = new NearestStopsThread(busStops, bus, writer);
+            thread.run();
         }
 
         reader.close();
         writer.close();
-    }
-
-    public static int[] getNearestStops(int[] busStops,
-                                        int[] buses) {
-
-        int numberStops = busStops.length;
-
-        int numberBuses = buses.length;
-        int[] nearestStops = new int[numberBuses];
-        for (int numberBus = 0; numberBus < numberBuses; numberBus++) {
-
-            int bus = buses[numberBus];
-
-            if (numberBus == 0) {
-                nearestStops[numberBus] = getNearestStop(
-                        busStops,
-                        numberStops,
-                        bus
-                );
-            } else {
-                for (int i = 0; i < numberBus; i++) {
-                    int nextBus = buses[i];
-                    if (nextBus == bus) {
-                        nearestStops[numberBus] = nearestStops[i];
-                        break;
-                    }
-                }
-                if (nearestStops[numberBus] == 0) {
-                    nearestStops[numberBus] = getNearestStop(
-                            busStops,
-                            numberStops,
-                            bus
-                    );
-                }
-            }
-        }
-
-        return nearestStops;
-    }
-
-
-    private static int getNearestStop(int[] busStops, int numberStops, int bus) {
-        int index = numberStops;
-        int busStop = busStops[index - 1];
-        int distance = Math.abs(bus - busStop);
-
-        if (distance != 0) {
-            for (int numberStop = numberStops - 2; numberStop >= 0; numberStop--) {
-
-                busStop = busStops[numberStop];
-
-                int currentDistance = Math.abs(bus - busStop);
-
-                if (distance >= currentDistance) {
-                    if (numberStop != 0) {
-                        distance = currentDistance;
-                        index = numberStop;
-                    } else {
-
-                        return numberStop + 1;
-                    }
-                } else {
-
-                    return index + 1;
-                }
-            }
-        }
-
-        return index;
     }
 }
