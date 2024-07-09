@@ -1,4 +1,4 @@
-package com.codewars.kata.olimpic.busstops.utils;
+package com.codewars.kata.olimpic.neareststop.utils;
 
 public class ArrayUtils {
 

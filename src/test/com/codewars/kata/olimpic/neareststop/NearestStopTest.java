@@ -1,4 +1,4 @@
-package com.codewars.kata.olimpic.busstops;
+package com.codewars.kata.olimpic.neareststop;
 
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.DisplayName;
@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-import static com.codewars.kata.olimpic.busstops.BusStop.getNearestStops;
-import static com.codewars.kata.olimpic.busstops.utils.ArrayUtils.showArray;
-import static com.codewars.kata.olimpic.busstops.utils.ArrayUtils.sortAscendingOrder;
+import static com.codewars.kata.olimpic.neareststop.NearestStop.getNearestStops;
+import static com.codewars.kata.olimpic.neareststop.utils.ArrayUtils.showArray;
+import static com.codewars.kata.olimpic.neareststop.utils.ArrayUtils.sortAscendingOrder;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class BusStopTest {
+class NearestStopTest {
     private final Random random = new Random();
 
     @DisplayName("Стандартная интерпретация")
@@ -49,26 +49,24 @@ class BusStopTest {
 
         int maxStop = 50;
         int maxBus = maxStop / 2;
-        int minStop = maxStop / 10;
-        int minBus = minStop / 2;
 
-        int numberBuses = random.nextInt(minBus, maxBus);
+        int numberBuses = random.nextInt(maxBus);
         System.out.printf("int[] buses = /* %d */{", numberBuses);
         String format = "%d,";
         int[] buses = new int[numberBuses];
         for (int i = 0; i < numberBuses; i++) {
-            buses[i] = random.nextInt(1, maxStop);
+            buses[i] = random.nextInt( maxStop);
             if (i + 1 == numberBuses) format = "%d";
             System.out.printf(format, buses[i]);
         }
         System.out.println("}");
 
-        int numberStops = random.nextInt(minStop, maxStop);
+        int numberStops = random.nextInt( maxStop);
         System.out.printf("int[] busStop = /* %d */{", numberStops);
         format = "%d,";
         int[] busStops = new int[numberStops];
         for (int i = 0; i < numberStops; i++) {
-            busStops[i] = random.nextInt(1, maxStop);
+            busStops[i] = random.nextInt( maxStop);
             if (i + 1 == numberStops) format = "%d";
             System.out.printf(format, busStops[i]);
         }

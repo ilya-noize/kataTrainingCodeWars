@@ -1,4 +1,4 @@
-package com.codewars.kata.olimpic.busstops;
+package com.codewars.kata.olimpic.neareststop;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-import static com.codewars.kata.olimpic.busstops.utils.ArrayUtils.sortAscendingOrder;
+import static com.codewars.kata.olimpic.neareststop.utils.ArrayUtils.sortAscendingOrder;
 
 /**
 
@@ -44,7 +44,7 @@ import static com.codewars.kata.olimpic.busstops.utils.ArrayUtils.sortAscendingO
 2       <br/>
 1       <br/>
  */
-public class BusStop {
+public class NearestStop {
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

@@ -1,4 +1,4 @@
-package com.codewars.kata.olimpic.busstops.thread;
+package com.codewars.kata.olimpic.neareststop.thread;
 
 import lombok.SneakyThrows;
 

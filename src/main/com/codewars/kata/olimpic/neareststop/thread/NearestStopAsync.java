@@ -1,4 +1,4 @@
-package com.codewars.kata.olimpic.busstops.thread;
+package com.codewars.kata.olimpic.neareststop.thread;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-import static com.codewars.kata.olimpic.busstops.utils.ArrayUtils.sortAscendingOrder;
+import static com.codewars.kata.olimpic.neareststop.utils.ArrayUtils.sortAscendingOrder;
 
 /**
 Если автобус имеет координату x, то выбирается номер остановки i, минимизирующий
@@ -43,7 +43,7 @@ import static com.codewars.kata.olimpic.busstops.utils.ArrayUtils.sortAscendingO
 1       <br/>
 
  */
-public class BusStopAsync {
+public class NearestStopAsync {
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
