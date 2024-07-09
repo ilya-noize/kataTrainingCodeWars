@@ -66,3 +66,4 @@ i (1≤i≤n).
 
 2<br/>
 1<br/>
+![NearestStop.png](NearestStop.png)
