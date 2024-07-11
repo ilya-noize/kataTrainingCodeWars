@@ -1,1 +1,0 @@
-![CoupleOfLetters.png](CoupleOfLetters.png)

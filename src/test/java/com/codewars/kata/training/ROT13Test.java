@@ -1,14 +1,13 @@
 package com.codewars.kata.training;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 
-@DisplayName("Sample Tests")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class SolutionTest {
 

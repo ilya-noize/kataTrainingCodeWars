@@ -12,6 +12,9 @@ import java.util.Map;
  */
 public class ROT13 {
 
+    private ROT13() {
+    }
+
     public static String rot13(String message) {
         Map<Character, Character> code = getCode();
         char[] chars = message.toCharArray();
